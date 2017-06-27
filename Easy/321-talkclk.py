@@ -1,4 +1,6 @@
-# Define translation dictionaries
+"""
+Define translation dictionaries
+"""
 hour_num = {'00': 'twelve',	'01': 'one', '02': 'two', '03': 'three', '04': 'four',
 			'05': 'five', '06': 'six', '07': 'seven', '08': 'eight', '09': 'nine',
 			'10': 'ten', '11': 'eleven'}
@@ -7,7 +9,9 @@ min_one = {'0': 'oh', '1': 'ten', '2': 'twenty', '3': 'thirty', '4': 'forty', '5
 min_two = {'0': ''}
 min_teens = {'11': 'eleven', '12': 'twelve', '13': 'thirteen', '15':'fifteen', '18': 'eighteen'}
 
-# Define generator functions for translation dictionaries
+"""
+Define generator functions for translation dictionaries
+"""
 def gen_hour_num():
 	# Hours > 11 are already entered into hour num, so all we have to do is
 	# add the existing value to the dictionary
@@ -32,7 +36,9 @@ def gen_min_num():
 		if str(i) not in min_teens.keys():
 			min_teens[str(i)] = hour_num['0' + str(i)[1]] + 'teen'
 
-
+"""
+Define the translator function
+"""
 def talk_clk(time):
 	# Initialize output and am/pm
 	output = 'It\'s '
@@ -72,6 +78,7 @@ def talk_clk(time):
 	return output
 
 
+# Run test
 sample = ['00:00', '01:30', '12:05', '14:01', '20:29', '21:00', '12:12']
 
 for smpl in sample:
