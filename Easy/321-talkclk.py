@@ -75,6 +75,7 @@ def talk_clk(time):
 	output += am_pm
 	return output
 
+"""Test with sample inputs"""
 
 sample = ['00:00', '01:30', '12:05', '14:01', '20:29', '21:00', '12:12']
 
