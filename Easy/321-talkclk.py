@@ -58,22 +58,25 @@ def talk_clk(time):
 	# Add hours to output
 	output += hour_num[str(hour)] + ' '
 
+	# If no minutes past the hour
+	if int(minutes) == 0:
+		output += '' # do nothing
 	# If minutes is a teen add the proper value
-	if int(minutes) > 10 and int(minutes) < 20:
+	elif int(minutes) > 10 and int(minutes) < 20:
 		output += min_teens[minutes] + ' '
 	# Else figure out what values we need
 	else:
 		output += min_one[minutes[0]] + ' '
 
-		if len(minutes) > 1:
+		# If there is a second minutes number (i.e. if minutes is not a multiple of 10)
+		if int(minutes) % 10 != 0:
 			output += min_two[minutes[1]] + ' '
 
 	output += am_pm
 	return output
 
-"""Print demo if imported"""
-if __name__ == 'main':
-	sample = ['00:00', '01:30', '12:05', '14:01', '20:29', '21:00', '12:12']
 
-	for smpl in sample:
-		print(talk_clk(smpl))
+sample = ['00:00', '01:30', '12:05', '14:01', '20:29', '21:00', '12:12']
+
+for smpl in sample:
+	print(talk_clk(smpl))
