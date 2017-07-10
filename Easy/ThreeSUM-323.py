@@ -2,7 +2,7 @@ challenge_input1 = [4,5,-1,-2,-7,2,-5,-3,-7,-3,1]
 challenge_input2 = [-1,-6,-3,-7,5,-8,2,-8,1]
 challenge_input3 = [-5,-1,-4,2,9,-9,-6,-1,-7]
 
-
+# Algorithm almost directly from wikipedia
 def threesum(inp):
 	output = set() # container for the output
 	inp.sort() # sort the input so we aren't looking everywhere
